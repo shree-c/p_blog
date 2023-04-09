@@ -6,7 +6,7 @@ layout: ../../layouts/MainLayoutWithNav.astro
 
 ## TLDR
 
-In the is final part of JSON series, I explain the logic I used to parser and serialize JSON. 
+I explain the logic I used to parser and serialize JSON. 
 JSON has non-primitive data types. So, there is nesting. I could have used the similar technique that I describe in [part 1](/p_blog/articles/json_parser_part_1) of this series; that is: have functions taking care of each data entity and they recursively call each other going through the JSON string.
 
 ## Serialization
