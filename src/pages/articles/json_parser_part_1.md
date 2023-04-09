@@ -54,7 +54,7 @@ I went along with a similar idea: dividing the input into tokens, and functions 
 
 I chose CPP because it would be nicer to have classes and containers around.
 
-![Naive implementation](/assets/test.drawio.svg)
+![Naive implementation](/p_blog/assets/test.drawio.svg)
 
 Here is a naive implementation of the parser. This doesn't involve serializing data. All the program does is takes input and check whether it is in valid format; in our case, valid JSON format.
 

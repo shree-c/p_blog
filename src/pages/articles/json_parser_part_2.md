@@ -16,7 +16,7 @@ I was using CPP. The first problem I faced was: how to organize data. CPP is a s
 
 The answer is polymorphism. I made a generic base class called JsonEntity and made different classes for each of the datatypes in JSON, such as JsonBool for representing boolean, JsonObj for representing objects, JsonNumber for representing Numbers, and so on. These classes for data types inherit the generic base class JsonEntity. And I stored a pointer to JsonEntity inside a vector for implementing Json Arrays, or a map to implement Json Objects.
 
-![class diagram](/assets/json.drawio.svg)
+![class diagram](/p_blog/assets/json.drawio.svg)
 
 The next natural problem is: how are we going to determine the type of generic pointers in containers. The answer is: to add a method called `get_type` to each type object which returned an enum signifying type. And then, we would cast the pointer to its type before working with it.
 Thus we have solved the problem of managing heterogeneous data types. Now the work left is to validate the JSON string and serialize the data to native data types so that it can be consumed in any cpp application.
