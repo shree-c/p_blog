@@ -1,0 +1,27 @@
+---
+const pages = await Astro.glob("./articles/*.md");
+import MainLayoutWithNav from "../layouts/MainLayoutWithNav.astro";
+import FluidCenter from "../components/FluidCenter.astro";
+---
+
+<MainLayoutWithNav title="My articles">
+  <FluidCenter>
+    <ul id="articles_list">
+      {
+        pages.map((post) => {
+          return (
+            <li>
+              <a href={post.url}>{post.frontmatter.title}</a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </FluidCenter>
+</MainLayoutWithNav>
+
+<style>
+  #articles_list li {
+    margin: 15px 0;
+  }
+</style>

@@ -1,0 +1,24 @@
+[
+  {
+    "title": "Main Projects",
+    "list_items": [
+      {
+        "title" : "Json Parser",
+        "short_description": "A JSON parser that comes close to the performance of JSON.parse for large inputs (> 10M), and outperforms it for small inputs.",
+        "tech": ["CPP"],
+        "link": "/p_blog/articles/json_parser_part_3",
+        "link_title": "JSON parser implementation"
+      },
+      {
+        "title": "A news Fouram website",
+        "short_description": "Inspired by Hacker News.",
+        "tech": ["nodeJS", "sqlite"]
+      },
+      {
+        "title": "Blade: a toy markup language",
+        "short_description": "Tried to build a simple markup language and render it to html.",
+        "tech": ["JS", "pegJS", "React"]
+      }
+    ]
+  }
+]

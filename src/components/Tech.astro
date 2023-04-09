@@ -1,0 +1,20 @@
+---
+export interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<span class="tech">
+  {name}
+</span>
+
+<style>
+  .tech {
+    border: 1px solid grey;
+    margin: 0 3px;
+    padding: 3px;
+    border-radius: 3px;
+  }
+</style>

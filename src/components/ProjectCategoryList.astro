@@ -1,0 +1,59 @@
+---
+export interface Project_listing_item {
+  title: string;
+  short_description: string;
+  link?: string;
+  tech: string[];
+  link_title?: string;
+}
+export interface Props {
+  title: string;
+  optional_article?: string;
+  list_items: Project_listing_item[];
+}
+const { title, list_items } = Astro.props;
+import Tech from "./Tech.astro";
+---
+
+<div class="project_category">
+  <h4>{title}</h4>
+  <ul>
+    {
+      list_items.map((item) => {
+        return (
+          <li>
+            <h5>{item.title}</h5>
+            <div class="tech_listing">
+              {item.tech.map((tech) => {
+                return <Tech name={tech} />;
+              })}
+            </div>
+            <span>{item.short_description}</span>
+            {item.link ? (
+              <div id="blog_articles">
+                <span>Blog Posts:</span>
+                <p>
+                  <a href="item.link">{item.link_title || "blog post"} </a>
+                </p>
+              </div>
+            ) : (
+              ""
+            )}
+          </li>
+        );
+      })
+    }
+  </ul>
+</div>
+
+<style>
+  .tech_listing {
+    margin: 5px 0;
+  }
+  #blog_articles {
+    margin: 5px 0;
+  }
+  #blog_articles > span {
+    color: rgb(135, 170, 135);
+  }
+</style>

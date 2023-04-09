@@ -1,0 +1,19 @@
+{
+  "grammarly.selectors": [
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "src/pages/articles/json_parser_part_1.md"
+    },
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "src/pages/articles/json_parser_part_2.md"
+    },
+    {
+      "language": "markdown",
+      "scheme": "file",
+      "pattern": "src/pages/articles/json_parser_part_3.md"
+    }
+  ]
+}

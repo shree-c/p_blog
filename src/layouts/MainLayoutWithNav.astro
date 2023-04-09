@@ -1,0 +1,89 @@
+---
+export interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="outer">
+      <nav>
+        <ul class="h_flex_center">
+          <li>
+            <a href="/p_blog/">Home</a>
+          </li>
+          <li>
+            <a href="/p_blog/articles">Articles</a>
+          </li>
+        </ul>
+      </nav>
+      <main>
+        <slot />
+      </main>
+      <footer>
+        <h3>Contact:</h3>
+        <ul>
+          <li>Mail: srvajpe at gmail dot com</li>
+          <li>
+            <a href="https://linkedin.com/shreejs">Linkedin</a>
+          </li>
+          <li>
+            <a href="https://github.com/shree-c">Github</a>
+          </li>
+        </ul>
+        <div>
+          Built with <a href="https://astro.build">Astro</a>. Hosted on Github.
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
+<style is:global>
+  .h_flex_center {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  nav {
+    margin: 30px 50px;
+  }
+  .outer {
+    max-width: 800px;
+    margin: auto;
+  }
+  body {
+    font-size: 1.2rem;
+    font-family: monospace;
+    background-color: rgb(12, 2, 8);
+    color: rgb(0, 255, 65);
+  }
+  body a {
+    color: rgb(0, 143, 17);
+  }
+  main {
+    min-height: 500px;
+    margin: 50px 0;
+  }
+  img {
+    width: 100%;
+    margin: 40px 0;
+  }
+  code {
+    color: pink;
+  }
+</style>

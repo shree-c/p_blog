@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/MainLayoutWithNav.astro";
+import Center from "../components/FluidCenter.astro";
+import ProjectCategoryList from "../components/ProjectCategoryList.astro";
+import projects from "../data/projects.json";
+---
+
+<Layout title="Shridhar Vajpe's blog">
+  <Center>
+    <h3>
+      Hi, I am Shridhar. I write software. My areas of interests are programming
+      languages, performance tuning, systems programming, unix systems and
+      networks. You can check out some of my projects listed below and my
+      technical articles.
+    </h3>
+  </Center>
+  {
+    projects.map((item) => {
+      return (
+        <ProjectCategoryList title={item.title} list_items={item.list_items} />
+      );
+    })
+  }
+  <Center />
+</Layout>
