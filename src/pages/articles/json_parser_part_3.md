@@ -41,7 +41,7 @@ I have also added functionality to pretty print JSON just like [jq](https://gith
 
 ![pretty print](/p_blog/assets/pretty_print.png)
 
-For small files, it surpasses JSON.stringify of JS in the speed of serialization. However, for too big strings: like > 20MB, it is slower than `JSON.parse`, but not too much. That's because v8 used by JS heavily optimizes strings and I am using `std::string` in my program. A slight overhead is also added because of the use of smart_pointers.
+For small files, it surpasses JSON.stringify of JS in the speed of serialization. However, for too big strings: like > 20MB, it is slower than `JSON.parse`, but not too much. That's because v8 used by JS heavily optimizes strings and I am using `std::string` in my program. A slight overhead is also added because of the use of smart\_pointers.
 
 Here is the parse speed comparison against JSON.parse for a large test file of ~ 32MB.
 
