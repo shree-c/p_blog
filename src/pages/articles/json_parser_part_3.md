@@ -45,10 +45,10 @@ For small files, it surpasses JSON.stringify of JS in the speed of serialization
 
 Here is the parse speed comparison against JSON.parse for a large test file of ~ 32MB.
 
-![performance comparison](/assets/performance_against_json_parse.png)
+![performance comparison](/p_blog/assets/performance_against_json_parse.png)
 
 To make sure there aren't any memory leaks, I made the parser parse the same 32MB file and ran the process through Valgrind. Thankfully, there weren't any leaks.
 
-![memory leak check](/assets/leak.png)
+![memory leak check](/p_blog/assets/leak.png)
 
 I plan on improving the performance of the parser in the future. I tried to use raw pointers and manual memory management on a different branch, but it only bought an improvement of 10 ms. So, I abandoned the idea.
