@@ -5,17 +5,17 @@ layout: ../../layouts/MainLayoutWithNav.astro
 ---
 
 ## TLDR
-
-I explain the logic I used to parser and serialize JSON. 
-JSON has non-primitive data types. So, there is nesting. I could have used the similar technique that I describe in [part 1](/p_blog/articles/json_parser_part_1) of this series; that is: have functions taking care of each data entity and they recursively call each other going through the JSON string.
+I explain serialization of JSON data to native cpp objects.
 
 ## Serialization
 
+JSON has non-primitive data types: arrays, objects. Objects and Arrays can be nested within each other. I could have used the similar technique that I describe in [part 1](/p_blog/articles/json_parser_part_1) of this series; that is: have functions taking care of each data entity and they recursively call each other going through the JSON input.
+
 ![recursive illustration](/p_blog/assets/rec_ill.svg)
 
-But I wanted to make the parser performant and resilient. There would be a lot of function calls and that would slow down our program. And on top of that the calls are recursive. That means our program becomes dependent on the stack size of the operating system. A JSON string that is heavily nested may cause StackOverflow!
+But I wanted to make the parser performant and resilient. Function call adds a bit of overhead. If we define functions for taking care of each entity in JSON, we would end up with a lot of function calls. And on top of that the calls have to be recursive. That means our program becomes dependent on the stack size of the operating system. A JSON input that is heavily nested may cause StackOverflow!
 
-According to the crude test I ran in my Linux env without changing any stack settings, I got this result.
+According to the crude test I ran on my Linux machine without changing any stack settings, I got this result.
 
 ![stack overflow](/p_blog/assets/stack_test.png)
 
@@ -27,7 +27,7 @@ I used `std::vector` to implement the stack. Now, we are limited by the maximum 
 
 ![stack overflow](/p_blog/assets/shapes_non_rec.svg)
 
-If we encounter primitive data types we pushed to the mouth which pointed to the top of the stack, else if we encountered a container we updated the stack. And pop from the stack when a container ended.
+If we encounter primitive data we pushed it to the mouth which pointed to the top of the stack, else if we encountered a container we updated the stack. And pop from the stack when a container ended.
 
 I used `std::shared_ptr` for pointers, so there is no manual memory management. And the private value inside the object that held the actual values is not dynamically allocated; which meant the value would be destroyed if the object is destroyed.
 
@@ -52,3 +52,5 @@ To make sure there aren't any memory leaks, I made the parser parse the same 32M
 ![memory leak check](/p_blog/assets/leak.png)
 
 I plan on improving the performance of the parser in the future. I tried to use raw pointers and manual memory management on a different branch, but it only bought an improvement of 10 ms. So, I abandoned the idea.
+
+[Repository of JSON\_Parser](https://github.com/shree-c/cpp_json)

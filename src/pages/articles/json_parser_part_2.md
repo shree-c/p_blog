@@ -19,8 +19,10 @@ The answer is polymorphism. I made a generic base class called JsonEntity and ma
 ![class diagram](/p_blog/assets/json.drawio.svg)
 
 The next natural problem is: how are we going to determine the type of generic pointers in containers. The answer is: to add a method called `get_type` to each type object which returned an enum signifying type. And then, we would cast the pointer to its type before working with it.
-Thus we have solved the problem of managing heterogeneous data types. Now the work left is to validate the JSON string and serialize the data to native data types so that it can be consumed in any cpp application.
+Thus we have solved the problem of managing heterogeneous data types. Now the work left is to validate the JSON input and serialize the data to native data types so that it can be consumed in any cpp application.
 
 In the next article, I am going to explain the approach I use to serialize data. _spoiler: I don't use recursion_
 
 [Json Parser: part 3: Implementation](/p_blog/articles/json_parser_part_3)
+
+[Repository of JSON\_Parser](https://github.com/shree-c/cpp_json)
