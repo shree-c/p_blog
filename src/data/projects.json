@@ -3,21 +3,170 @@
     "title": "Main Projects",
     "list_items": [
       {
-        "title" : "Json Parser",
+        "title": "Json Parser",
         "short_description": "A JSON parser that comes close to the performance of JSON.parse for large inputs (> 10M), and outperforms it for small inputs.",
-        "tech": ["CPP"],
+        "tech": [
+          "CPP"
+        ],
         "link": "/p_blog/articles/json_parser_part_3",
         "link_title": "JSON parser implementation"
       },
       {
         "title": "A news Fouram website",
         "short_description": "Inspired by Hacker News.",
-        "tech": ["nodeJS", "sqlite"]
+        "link": "https://github.com/shree-c/desi_hacker_news",
+        "link_title": "repo",
+        "tech": [
+          "nodeJS",
+          "SQLite"
+        ]
       },
       {
         "title": "Blade: a toy markup language",
-        "short_description": "Tried to build a simple markup language and render it to html.",
-        "tech": ["JS", "pegJS", "React"]
+        "short_description": "Tried to build a simple markup language and render it to HTML.",
+        "link": "https://shree-c.github.io/blade_cra/",
+        "link_title": "implementation",
+        "tech": [
+          "JS",
+          "pegJS",
+          "React"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Web projects",
+    "list_items": [
+      {
+        "title": "Google Calculator",
+        "short_description": "A calculator inspired by Google calculator on Android",
+        "link": "https://github.com/shree-c/google-calculator",
+        "link_title": "repo",
+        "tech": [
+          "Web technologies"
+        ]
+      },
+      {
+        "title": "Converter",
+        "short_description": "A converter app built using react",
+        "link": "https://github.com/shree-c/react-converter",
+        "link_title": "repo",
+        "tech": [
+          "Web technologies",
+          "React"
+        ]
+      },
+      {
+        "title": "Blogging website",
+        "short_description": "A blogging/social website",
+        "link": "https://github.com/shree-c/A-blog",
+        "link_title": "repo",
+        "tech": [
+          "Express",
+          "nodeJS",
+          "Web technologies",
+          "MongoDB"
+        ]
+      },
+      {
+        "title": "Bookmark timestamps",
+        "short_description": "A browser plugin to bookmark youtube videos",
+        "link": "https://github.com/shree-c/bookmark_timestamps",
+        "link_title": "repo",
+        "tech": [
+          "Web technologies"
+        ]
+      },
+      {
+        "title": "Anonymous messenger",
+        "short_description": "A website to message anonymously",
+        "link": "https://github.com/shree-c/chattz",
+        "link_title": "repo",
+        "tech": [
+          "Express",
+          "nodeJS"
+        ]
+      },
+      {
+        "title": "Stock visualizer",
+        "short_description": "A simple website to visualize data",
+        "link": "https://github.com/shree-c/stockapp",
+        "link_title": "repo",
+        "tech": [
+          "d3js",
+          "Web technologies"
+        ]
+      }
+    ]
+  },
+
+{
+    "title": "APIs",
+    "list_items": [
+      {
+        "title": "Books API",
+        "short_description": "CRUD api to manage books",
+        "link": "https://github.com/shree-c/booksapi",
+        "link_title": "repo",
+        "tech": [
+          "nodeJS",
+          "MongoDB",
+          "Express"
+        ]
+      },
+      {
+        "title": "Shopping API",
+        "short_description": "A simple backend api for creating shops",
+        "link": "https://github.com/shree-c/node-shopping-api",
+        "link_title": "repo",
+        "tech": [
+          "nodeJS",
+          "MongoDB",
+          "express"
+        ]
+      },
+      {
+        "title": "Bootcamps API",
+        "short_description": "CRUD api to manage boot camps",
+        "link": "https://github.com/shree-c/bookmark_timestamps",
+        "link_title": "repo",
+        "tech": [
+          "nodeJS",
+          "MongoDB",
+          "Express",
+          "JWT"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Bots",
+    "list_items": [
+      {
+        "title": "hindukushbot",
+        "short_description": "A bot to fetch news from the Hindu and send it to your inbox",
+        "link": "https://github.com/shree-c/hindukushbot",
+        "link_title": "repo",
+        "tech": [
+          "telegram api",
+          "nodeJS",
+          "MongoDB"
+        ]
+      }
+    ]
+  }
+
+
+,
+  {
+    "title": "Misc",
+    "list_items": [
+      {
+        "title": "my nvim config",
+        "short_description": "My neo vim config",
+        "link_title": "repo",
+        "link": "https://github.com/shree-c/neovimconfig",
+        "tech": ["neovim"]
       }
     ]
   }
